@@ -4,3 +4,5 @@ pycryptodome==3.18.0
 protobuf==4.24.4
 pyjwt==2.8.0
 asyncio==3.4.3
+requests==2.31.0
+urllib3==2.0.7
