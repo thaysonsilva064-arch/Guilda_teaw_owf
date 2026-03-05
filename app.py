@@ -1,3 +1,5 @@
+import os
+import sys
 import httpx
 import time
 import re
@@ -5,20 +7,22 @@ import json
 import binascii
 import requests
 import urllib3
-import jwt as pyjwt # Usado para decode de região
-import jwt           # Usado no script 1
+import jwt as pyjwt 
+import jwt           
 from flask import Flask, request, jsonify
 from datetime import datetime
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad
-import sys
 
-# Importação dos Protobufs (Certifique-se que todos os .py estão na pasta)
+# --- CORREÇÃO DE IMPORTAÇÃO PARA RENDER ---
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 import data_pb2
 import encode_id_clan_pb2
 import reqClan_pb2
-import my_pb2      # Do script 1
-import output_pb2  # Do script 1
+import my_pb2      
+import output_pb2  
+# ------------------------------------------
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
