@@ -225,5 +225,6 @@ def majorlogin_jwt():
     return jsonify({"message": "conversion failed"}), 400
 
 if __name__ == '__main__':
-    port = int(sys.argv[1]) if len(sys.argv) > 1 else 5000
-    app.run(host='0.0.0.0', port=port, debug=False)
+    # O Render passa a porta automaticamente pela variável PORT
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
